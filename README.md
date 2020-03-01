@@ -19,10 +19,27 @@ the same key.
 -Output: nodes write their final results to one output file (which we will also assume to be a text file). 
 
 Typically, available implementations of MapRedcue frameworks automate the entire workflow. Users only need to specify the input text file, the mapper function and the output function.
-In this project, The task is to build a MapReduce framework using plain Java.
+
 
 # Porject Description:
-In this project, MapReduce framework is built using plain Java.  docker swarm as
-orchestration tool.Input: input text file, mapper function, reducer function, the number of mapper nodes and the number of reducer nodes.
+In this project, The framework has three programs that are distributed on different nodes (machines):
 
-Output: output text file, performance statistics file.
+-The first program is the mainNode; it is the main program which starts the framework, read the inputs, and controls the rest of the nodes. The mainNode program should have one global replica, and should be created on a manger/master machine in the swarm. 
+The main node has a GUI built using JavaFX. 
+
+MainNode Input: input text file, mapper function, reducer function, the number of mapper nodes and the number of reducer nodes.
+
+MainNode Output: output text file.
+
+-The second program is the mapperNode program. Which is the program that that handles running a mapping function on a split of the text file. The number of mapper nodes is defined by the users as mentioned previously. The processes of creating the mapperNode replicas, sending information to them, receiving information from them, and destroying them are fully automated and controlled by the MainNode. And the orchestration of the replicas is handled by docker swarm.
+
+MapperNode Input: text file split, mapper function.
+
+MapperNode Output: Map of the keys and values.
+	
+-The Third program is the reducerNode program. Which is the program that that handles running the reducing function on mappers outputs. The number of reducer nodes is defined by the users as mentioned previously. The processes of creating the reducerNode replicas, sending information to them, receiving information from them, and destroying them are fully automated and controlled by the MainNode. And the orchestration of the replicas is handled by docker swarm.
+
+reducerNode Input: Map of the keys and values, reducer function.
+
+reducerNode Output:  reduced Map of the keys and values.
+
