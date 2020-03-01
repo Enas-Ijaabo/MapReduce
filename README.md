@@ -6,23 +6,7 @@
  
 
 # General Introduction of MapReduce Framework
-MapReduce is a software framework that is used for processing large data sets in a distributed fashion over sevel machines (i.e., nodes).
-The core idea behind MapReduce is mapping your data set into a collection of <key, value> pairs, and then reducing over all pairs with 
-the same key.  
--Input: in this project, we will always assume the input is a text file.
-
--Splitting phase: the text in the input file is splitted equally into segments and each segment is passed to a dffierent node.
-
--Mapping phase: each node runs the mapping function (which is given by the user) to convert text segments into <key,value> pairs.
-
--Shuffling phase: node exchange <key,value> pairs such that the pairs with the same keys are grouped in the same node.
-
--Reducing phase: each node runs the reduce function (which is also given by the user), which takes a collection of <key,value> pairs and "reduce" them into a smaller set of <key,value> pairs.
-
--Output: nodes write their final results to one output file (which we will also assume to be a text file). 
-
-Typically, available implementations of MapRedcue frameworks automate the entire workflow. Users only need to specify the input text file, the mapper function and the output function.
-
+MapReduce is a software framework that is used for processing large data sets in a distributed fashion over sevel machines (i.e., nodes).The core idea behind MapReduce is mapping your data set into a collection of <key, value> pairs, and then reducing over all pairs -with the same key. Typically, available implementations of MapRedcue frameworks automate the entire workflow. Users only need to specify the input text file, the mapper function and the output function.
 
 # Porject Description:
 
@@ -47,12 +31,17 @@ reducerNode Input: map of the keys and values, reducer function.
 
 reducerNode Output: reduced map of the keys and values.
 
-The running container of the mainNode, and all of the mapperNode and reducerNode replicas are connected to an overlay network, and communicate using Java sockets.
+The running container of the mainNode, and all of the mapperNode and reducerNode replicas are connected to an overlay network. The containers and replicas communicate using Java sockets.
 
 # Technologies:
 - Java 8
 - JavaFX
 - Docker 
 - Docker swarm
+- Maven
+
+# How To Run The FrameWork
+
+
 
 
