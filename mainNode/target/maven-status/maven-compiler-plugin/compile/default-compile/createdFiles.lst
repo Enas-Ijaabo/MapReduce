@@ -1,0 +1,9 @@
+Mapper\MapTaskStarter.class
+splitter\SplitTaskStarter.class
+splitter\TextSplits.class
+splitter\TextSplitter.class
+server\Server.class
+writers\CharListWriter.class
+gui\input\GuiInputBuilder.class
+gui\input\GuiInputs.class
+gui\controllers\start\StartController.class
