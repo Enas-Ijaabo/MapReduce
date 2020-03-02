@@ -52,8 +52,39 @@ The running container of the mainNode, and all of the mapperNode and reducerNode
 1- install Docker 18.09.0
 * *Note: You Do Not need to install anything else, because everything you need (java 8, javafx 8, ubuntu, etc ...) will be automatically installed when you pull the images from DockerHub* *
 
-2- on windows host powerShell 
-
+2- To view GUI on the windows host, we will need Xlunch. To install it, make sure you have [Chocolatey](https://chocolatey.org/) first, then write on the powerShell:
+```
 choco install vcxsrv
+```
+Then run Xlaunch from the start menu and follow the initial configuration steps:
 
+- on Display sitting window choose "Multipule windows", and click next.
 
+- on client startup window choose "Start no client", and click next. 
+
+- on Extra setting window make sure that all the boxes are checked, and click next
+
+- save the to one of the following locations:
+
+ %appdata%\Xming
+ 
+ %userprofile%\Desktop
+ 
+ %userprofile%
+
+3- Start a swarm with at least two machines, (if you already have swarm skip this step)
+
+4- on the manager node create the overlay network net1
+```
+docker network create -d overlay --attachable net1
+```
+5-As the docker images of the three programs are already uploaded on Dockerhub use the following command to start the framwork:
+
+```
+docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
+```
+- The option v represents the shared volume between the container and the manager node, you can change the it to any desired , location in the manager, and in the container.
+
+- The option e represents the environment variables, the variable DISPLAY should be set to the windows host ip. So that, Xlunch can display the GUI.
+
+6- 
