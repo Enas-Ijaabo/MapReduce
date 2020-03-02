@@ -1,0 +1,23 @@
+
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Reducer {
+
+
+    public Map reduce(Map<Object, List> inputMap){
+
+        Map<String, Integer> outputMap= new TreeMap<>();
+
+        for (Object key: inputMap.keySet()){
+            int numberOfOccurrence=0;
+
+            for ( Object integer: inputMap.get(key)){
+                numberOfOccurrence+= (Integer) integer;
+            }
+            outputMap.put((String) key, numberOfOccurrence);
+        }
+        return outputMap;
+    }
+}
