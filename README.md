@@ -52,4 +52,8 @@ The running container of the mainNode, and all of the mapperNode and reducerNode
 1- install Docker 18.09.0
 * *Note: You Do Not need to install anything else, because everything you need (java 8, javafx 8, ubuntu, etc ...) will be automatically installed when you pull the images from DockerHub* *
 
+2- on windows host powerShell 
+
+choco install vcxsrv
+
 
