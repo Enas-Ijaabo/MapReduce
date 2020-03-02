@@ -2,8 +2,8 @@
 1. [General Introduction of MapReduce Framework](#general-introduction-of-mapreduce-framework)
 2. [Porject Description](#porject-description)
 3. [Technologies](#technologies)
-
- 
+4. [How To Run The Framework](#how-to-run-the-framework)
+5. [Example](#example)
 
 # General Introduction of MapReduce Framework
 MapReduce is a software framework that is used for processing large data sets in a distributed fashion over sevel machines (i.e., nodes).The core idea behind MapReduce is mapping your data set into a collection of <key, value> pairs, and then reducing over all pairs -with the same key. Typically, available implementations of MapRedcue frameworks automate the entire workflow. Users only need to specify the input text file, the mapper function and the output function.
@@ -47,7 +47,7 @@ The running container of the mainNode, and all of the mapperNode and reducerNode
 - Maven
 - ubuntu 
 
-# How To Run The FrameWork
+# How To Run The Framework
 
 1- install Docker 18.09.0
 * *Note: You Do Not need to install anything else, because everything you need (java 8, javafx 8, ubuntu, etc ...) will be automatically installed when you pull the images from DockerHub* *
@@ -83,8 +83,20 @@ docker network create -d overlay --attachable net1
 ```
 docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
 ```
-- The option v represents the shared volume between the container and the manager node, you can change the it to any desired , location in the manager, and in the container.
+- The option v represents the shared volume (directory) between the container and the manager node, you can change the it to any desired , location in the manager, and in the container.
 
 - The option e represents the environment variables, the variable DISPLAY should be set to the windows host ip. So that, Xlunch can display the GUI.
 
-6- 
+- enij/main_node is the MainNode image name on DockerHub.
+
+6- fill the GUI fields then click start. 
+
+- Make sure you fill the output directory path with the path of shared volume that is inside the container (Check [Example](#example)).
+
+7- check the output text file in the shared volume on the manager machine
+
+# Example
+
+```
+docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
+```
