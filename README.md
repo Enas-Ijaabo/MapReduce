@@ -81,7 +81,7 @@ docker network create -d overlay --attachable net1
 5-As the docker images of the three programs are already uploaded on Dockerhub use the following command to start the framwork:
 
 ```
-docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
+docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
 ```
 - The option v represents the shared volume (directory) between the container and the manager node, you can change the it to any desired , location in the manager, and in the container.
 
@@ -97,6 +97,7 @@ docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:
 
 # Example
 
+After executing the following command and 
 ```
-docker docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
+docker run --network=net1 -v /manager_dir:/container_dir -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
 ```
