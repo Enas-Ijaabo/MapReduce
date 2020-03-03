@@ -97,7 +97,24 @@ docker run --network=net1 -v /manager_host_path:/container_path -p 10000:10000 -
 
 # Example
 
-After executing the following command and 
+This is a word count example: 
+
+1- As mentioned in the previous section, execute the following command to open the GUI and start the framework
 ```
 docker run --network=net1 -v /manager_dir:/container_dir -p 10000:10000 -e DISPLAY=WINDOWS_HOST_IP:0.0 enij/main_node 
 ```
+2- Fill the GUI fields as following:
+
+- input file path: Enter the path for your input text file, use this [file](#https://github.com/Enas-Ij/MapReduce/blob/master/example/input.txt) as an example.
+
+- output directory path: Enter the path of shared volume that is inside the container. In example here the shared volume path is **/container_dir**.
+
+- num of mapper nodes: For example 5.
+
+- num of reducer nodes: For example 4.
+
+- mapper code: copy the mapper class code in this [file](#https://github.com/Enas-Ij/MapReduce/blob/master/example/mapper%20class.txt) and past it in the field.
+
+- reducer code: copy the reducer class code in this [file](#https://github.com/Enas-Ij/MapReduce/blob/master/example/reducer%20class.txt) and past it in the field.
+
+3- Check the output text file in the shared volume on the manager machine. In this example the path is **/manager_dir**. 
