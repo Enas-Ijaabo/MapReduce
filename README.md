@@ -113,8 +113,8 @@ docker run --network=net1 -v /manager_dir:/container_dir -p 10000:10000 -e DISPL
 
 - num of reducer nodes: For example 4.
 
-- mapper code: copy the mapper class code in this [file](#https://github.com/Enas-Ij/MapReduce/blob/master/example/mapper%20class.txt) and past it in the field.
+- mapper code: copy the mapper class code in this [file](https://github.com/Enas-Ij/MapReduce/blob/master/example/mapper%20class.txt) and past it in the field.
 
-- reducer code: copy the reducer class code in this [file](#https://github.com/Enas-Ij/MapReduce/blob/master/example/reducer%20class.txt) and past it in the field.
+- reducer code: copy the reducer class code in this [file](https://github.com/Enas-Ij/MapReduce/blob/master/example/reducer%20class.txt) and past it in the field.
 
 3- Check the output text file in the shared volume on the manager machine. In this example the path is **/manager_dir**. 
