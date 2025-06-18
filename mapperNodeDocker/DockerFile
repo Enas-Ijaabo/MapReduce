@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get clean
 
 
-COPY /Mapper.jar /
+COPY /mapperNode.jar /
 
 
 COPY /controlfile.sh /
