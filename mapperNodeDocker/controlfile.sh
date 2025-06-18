@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -cp Mapper.jar ServerMain $1
+java -cp mapperNode.jar ServerMain $1

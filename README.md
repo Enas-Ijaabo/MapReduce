@@ -27,7 +27,7 @@ MapperNode Input: text file split, mapper function.
 
 MapperNode Output: map of the keys and values.
 
-**To see the source code of MapperNode click [here](https://github.com/Enas-Ij/MapReduce/tree/master/Mapper). To see the dockerFile and shellScript to create the docker image click [here](https://github.com/Enas-Ij/MapReduce/tree/master/mapperNodeDocker).**
+**To see the source code of MapperNode click [here](https://github.com/Enas-Ij/MapReduce/tree/master/mapperNode). To see the dockerFile and shellScript to create the docker image click [here](https://github.com/Enas-Ij/MapReduce/tree/master/mapperNodeDocker).**
 
 -The Third program is the reducerNode program. Which is the program that that handles running the reducing function on mappers outputs. The number of reducer nodes is defined by the users as mentioned previously. The processes of creating the reducerNode replicas, sending information to them, receiving information from them, and destroying them are fully automated and controlled by the MainNode. And the orchestration of the replicas is handled by docker swarm.
 
